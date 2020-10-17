@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout, Menu } from "antd";
+import {Link} from "react-router-dom";
 import {
     UserOutlined,
     LaptopOutlined,
@@ -22,12 +23,12 @@ function SidebarComponent() {
             Dashboard
           </Menu.Item>
           <SubMenu key="sub1" icon={<UserOutlined />} title="Master Data">
-            <Menu.Item key="1">Kategori</Menu.Item>
-            <Menu.Item key="2">Produk</Menu.Item>
-            <Menu.Item key="3">User</Menu.Item>
+            <Menu.Item key="1"><Link to="/category">Kategori</Link></Menu.Item>
+            <Menu.Item key="2"><Link to="/product">Produk</Link></Menu.Item>
+            <Menu.Item key="3"><Link to="/user">User</Link></Menu.Item>
           </SubMenu>
           <SubMenu key="sub2" icon={<LaptopOutlined />} title="Transaksi">
-            <Menu.Item key="5">Booking</Menu.Item>
+            <Menu.Item key="5"><Link to="/booking">Booking</Link></Menu.Item>
           </SubMenu>
           <SubMenu key="sub3" icon={<NotificationOutlined />} title="Setting">
             <Menu.Item key="9">Admin</Menu.Item>

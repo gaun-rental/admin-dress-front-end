@@ -3,7 +3,7 @@ import { Button } from "antd";
 import { Layout } from "antd";
 import { Table, Space } from "antd";
 
-import "../StylePages.css";
+// import "./styles/Style.css";
 
 import HeaderComponent from "../components/HeaderComponent";
 import SidebarComponent from "../components/SidebarComponent";
