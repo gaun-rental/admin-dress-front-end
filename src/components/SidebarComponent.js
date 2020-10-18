@@ -20,7 +20,7 @@ function SidebarComponent() {
           style={{ height: "100%", borderRight: 0 }}
         >
           <Menu.Item key="dashboard" icon={<PieChartOutlined />}>
-            Dashboard
+            <Link to="/">Dashboard</Link>
           </Menu.Item>
           <SubMenu key="sub1" icon={<UserOutlined />} title="Master Data">
             <Menu.Item key="1"><Link to="/category">Kategori</Link></Menu.Item>

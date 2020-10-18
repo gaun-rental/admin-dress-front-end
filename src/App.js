@@ -1,24 +1,24 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+// } from "react-router-dom";
 
 
 import "./App.css";
 
-import Dashboard from "./pages/Dashboard";
-import Kategori from "./pages/Kategori";
-import Produk from "./pages/Produk";
-import User from "./pages/User";
-import Booking from "./pages/Booking";
-
+// import Dashboard from "./pages/Dashboard";
+// import Kategori from "./pages/Kategori/Kategori";
+// import Produk from "./pages/Produk/Produk";
+// import User from "./pages/User/User";
+// import Booking from "./pages/Booking/Booking";
+import Login from "./pages/Login";
 function App() {
   return (
     <>
       <div className="App">
-        <Router>
+        {/* <Router>
         <Switch>
         <Route exact path="/">
             <Dashboard />
@@ -35,14 +35,9 @@ function App() {
           <Route path="/booking">
             <Booking />
           </Route>
-          
         </Switch>
-        </Router>
-        {/* <Dashboard /> */}
-        {/* <Kategori/> */}
-        {/* <Produk/> */}
-        {/* <User/> */}
-       {/* <Booking/>  */}
+        </Router> */}
+        <Login/>
       </div>
     </>
   );

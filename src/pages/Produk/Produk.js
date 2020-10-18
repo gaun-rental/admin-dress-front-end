@@ -5,8 +5,8 @@ import { Table, Space } from "antd";
 
 // import "./styles/Style.css";
 
-import HeaderComponent from "../components/HeaderComponent";
-import SidebarComponent from "../components/SidebarComponent";
+import HeaderComponent from "../../components/HeaderComponent";
+import SidebarComponent from "../../components/SidebarComponent";
 function Produk() {
   const { Content } = Layout;
   const columns = [

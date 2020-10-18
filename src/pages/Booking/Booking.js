@@ -3,8 +3,8 @@ import { Layout } from "antd";
 import { Table, Space } from "antd";
 import { Switch } from "antd";
 
-import HeaderComponent from "../components/HeaderComponent";
-import SidebarComponent from "../components/SidebarComponent";
+import HeaderComponent from "../../components/HeaderComponent";
+import SidebarComponent from "../../components/SidebarComponent";
 
 function Booking() {
   const { Content } = Layout;

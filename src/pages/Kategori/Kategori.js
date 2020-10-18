@@ -5,8 +5,8 @@ import { Table, Space } from "antd";
 
 // import "./styles/Styles.css";
 
-import HeaderComponent from "../components/HeaderComponent";
-import SidebarComponent from "../components/SidebarComponent";
+import HeaderComponent from "../../components/HeaderComponent";
+import SidebarComponent from "../../components/SidebarComponent";
 function Kategori() {
   const { Content } = Layout;
   const columns = [
