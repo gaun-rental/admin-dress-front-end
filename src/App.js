@@ -20,7 +20,7 @@ function App() {
       <div className="App">
         <Router>
         <Switch>
-        <PrivateRoute exact path="/">
+        <PrivateRoute exact path="/dashboard">
             <Dashboard />
           </PrivateRoute>
           {/* <Route path="/category">

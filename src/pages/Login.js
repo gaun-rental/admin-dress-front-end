@@ -20,13 +20,13 @@ function Login() {
   const [error, setError] = useState(null);
 
   console.log('error', error)
-  // useEffect(() => {
-  //   // do stuff
+  useEffect(() => {
+    // do stuff
     
-  //   if (user.error !== null) {
-  //     setError(user.error);
-  //   }
-  // }, [user]);
+    if (user.error !== null) {
+      setError(user.error);
+    }
+  }, [user]);
 
 
 
@@ -59,12 +59,7 @@ const handleSubmit = (event) => {
                   <div className="col-lg-6">
                     <div className="p-5">
                       <div className="text-center">
-                      {error ? 
-                      <div>
-                        <p>not connect</p>
-
-                      </div>
-                      : null}
+                     {error ? <p>error</p> : null}
 
                         <h1 className="h4 text-gray-900 mb-4">LOGIN</h1>
                       </div>

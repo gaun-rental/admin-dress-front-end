@@ -47,7 +47,7 @@ export const setLoginUser = (values, event, history) => {
         }
   })
   .catch(error => {
-      console.log(error.response.data)
+      console.log('error catch', error.response.data)
       dispatch(userLoginFailed(error.response.data))
   });
     }
