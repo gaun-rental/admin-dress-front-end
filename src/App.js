@@ -1,14 +1,14 @@
 import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-
+import PrivateRoute from './helpers/PrivateRoute';
 import "./App.css";
 
-// import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 // import Kategori from "./pages/Kategori/Kategori";
 // import Produk from "./pages/Produk/Produk";
 // import User from "./pages/User/User";
@@ -18,12 +18,12 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* <Router>
+        <Router>
         <Switch>
-        <Route exact path="/">
+        <PrivateRoute exact path="/">
             <Dashboard />
-          </Route>
-          <Route path="/category">
+          </PrivateRoute>
+          {/* <Route path="/category">
             <Kategori />
           </Route>
           <Route path="/product">
@@ -34,10 +34,12 @@ function App() {
           </Route>
           <Route path="/booking">
             <Booking />
+          </Route> */}
+          <Route path='/login'>
+            <Login/>
           </Route>
         </Switch>
-        </Router> */}
-        <Login/>
+        </Router>
       </div>
     </>
   );

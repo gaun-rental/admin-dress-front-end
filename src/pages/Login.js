@@ -1,39 +1,46 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
-import {setLogin} from '../redux/actions/user.actions';
+import {setLoginUser} from '../redux/actions/user.actions';
 import "./styles/StyleAdmin.css";
 
 function Login() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user)
-  const [login, setLogins] = useState({
+  const history = useHistory();
+  const user = useSelector((state) => state.data)
+  const [login, setLogin] = useState({
     email: "",
     password: "",
   })
+
+  console.log('login', login)
+  console.log('user', user)
   
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
 
   console.log('error', error)
-  useEffect(() => {
-    // do stuff
-    if (user.error !== null) {
-      setError(user.error);
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   // do stuff
+    
+  //   if (user.error !== null) {
+  //     setError(user.error);
+  //   }
+  // }, [user]);
+
 
 
 const handleChange = (e) => {
-  setLogins({
+  setLogin({
     ...login,
     [e.target.name] : e.target.value
   })
 }
 
 const handleSubmit = (event) => {
-  dispatch(setLogin(login, event));
-  if(user.errors !== null) {
-    setError(user.errors);
+  dispatch(setLoginUser(login, event, history));
+  if(user.error !== null) {
+    setError(user.error);
   }
 
 }
@@ -52,7 +59,12 @@ const handleSubmit = (event) => {
                   <div className="col-lg-6">
                     <div className="p-5">
                       <div className="text-center">
-                      {error ? <h1>ada error</h1> : null}
+                      {error ? 
+                      <div>
+                        <p>not connect</p>
+
+                      </div>
+                      : null}
 
                         <h1 className="h4 text-gray-900 mb-4">LOGIN</h1>
                       </div>
@@ -74,6 +86,7 @@ const handleSubmit = (event) => {
                         <div className="form-group">
                           <input
                             type="password"
+                            name="password"
                             value = {login.password}
                             onChange={(e) => handleChange(e)}
                             className="form-control form-control-user"
@@ -95,12 +108,12 @@ const handleSubmit = (event) => {
                             </label>
                           </div>
                         </div>
-                        <a
-                          href="index.html"
+                        {/* <a
                           className="btn btn-primary btn-user btn-block"
                         >
                           Login
-                        </a>
+                        </a> */}
+                        <button>Login</button>
                       </form>
                     </div>
                   </div>

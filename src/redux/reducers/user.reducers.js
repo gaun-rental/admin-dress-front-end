@@ -1,13 +1,23 @@
 import {
-    USER_TOKEN,
     LOGIN_SUCCESS,
     LOGIN_FAILED,
-    LOGOUT
+    LOGOUT,
+    LOGIN_INFO
 } from '../actions/user.actions';
 
-const initiatState = {
-    loading: false,
-    error: ""
+const token = localStorage.getItem('token');
+
+
+const initiatState = token 
+? {
+    isLogged : true,
+    data: [],
+    error: null
+}
+: {
+    isLogged: false,
+    data: [],
+    error: null
 }
 
 const user = (state = initiatState, action) => {
@@ -15,18 +25,17 @@ const user = (state = initiatState, action) => {
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                data: action.payload,
-                loading: false
+                isLogged: true,
             }
         case LOGIN_FAILED:
             return {
                 ...state,
-                loading:false, 
                 error: action.payload
             }
-        case USER_TOKEN: 
-            return  {
-                data: action.payload
+        case LOGIN_INFO :
+            return {
+                ...state,
+                data: action.payload,
             }
         case LOGOUT :
             return {};
